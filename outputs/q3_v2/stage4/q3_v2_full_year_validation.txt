@@ -1,0 +1,4 @@
+Q3 V2 Stage 4 validation (causal shadow evaluation; no result3.xlsx)
+Protected manifest unchanged: True
+A_all_updates_dynamic_value: passed=True; balance=0.000e+00; cross_day=0.000e+00; information_violations=0
+B_no_adjustment_dynamic_value: passed=True; balance=0.000e+00; cross_day=0.000e+00; information_violations=0

@@ -1,0 +1,36 @@
+Question 3 information-boundary audit
+========================================
+official_evidence: Attachment 2 states actual power (kW) at different times, but does not define instantaneous versus completed-slot mean
+conservative_rule: no Attachment-2 PV value is used as an issue-time interpolation anchor
+left_anchor_rule: latest previously published forecast targeting the decision time
+cold_start_rule: 2025-01-01 has zero purchase and no optimization forecast; if a forecast is requested, current h=1 is held backward without actual PV
+load_rule: prior full days plus only idx < first_modifiable_idx for intraday bias
+parameter_rule: candidates are fixed before evaluation and ranked only on 2025-01-22 through 2025-01-31
+raw_result3_sha256: C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC
+result3.xlsx generated: False
+
+audit_start: 2025-01-02
+audit_end: 2025-01-31
+days: 30
+rows: 10890
+expected_rows: 10890
+actual_power_semantics_proven: False
+actual_pv_anchor_count: 0
+all_anchor_inputs_available_by_decision: True
+all_load_history_precedes_forecast_date: True
+all_intraday_load_observations_completed: True
+parameter_selection_uses_evaluation_period_only: True
+t35_target: 2025-01-15 06:00:00
+t35_left_source: previously_published_forecast
+t35_left_available: 2025-01-15 00:00:00
+t71_target: 2025-01-15 12:00:00
+t71_left_source: previously_published_forecast
+t71_left_available: 2025-01-15 06:00:00
+t107_target: 2025-01-15 18:00:00
+t107_left_source: previously_published_forecast
+t107_left_available: 2025-01-15 12:00:00
+t143_target: 2025-01-16 00:00:00
+t143_right_source_target: 2025-01-16 00:00:00
+passed: True
+
+audit_csv: E:\数学建模\C题\data\checks\q3_pv_information_inputs.csv

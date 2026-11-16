@@ -1,0 +1,121 @@
+Question 3 official data and template audit
+===========================================
+Audit scope: C题.pdf, Attachment 1, Attachment 2, Attachment 3, raw result3.xlsx
+Audit mode: read only; no solver run; no result3.xlsx output generated
+
+[Official requirement]
+Forecast release times: 00:00, 06:00, 12:00, 18:00 daily
+Forecast content: next 24 hourly PV power forecasts, unit kW
+Original plan: created at 00:00
+Adjustment: allowed after other forecast releases
+Emergency price: 5 times normal transaction-time price
+Downward adjustment stated rate: 0.5 times normal transaction-time price
+Upward excess stated rate: 1.5 times normal transaction-time price
+Formal output period: 2025-02-01 through 2025-12-31, 334 days
+Paper specified dates: 2025-03-20, 2025-06-21, 2025-09-23, 2025-12-21
+
+[Attachment 1]
+sheet_names: [Sheet1]
+data_rows: 144
+missing_cells: 0
+price_unit: yuan/kWh
+price_min: 0.3713
+price_max: 1.3952
+mapping_rule: preserve official row order; do not shift labels
+load_and_pv_columns_used_by_q3: False
+
+[Attachment 2]
+sheet_names: [小区负载, 光伏发电实际功率]
+date_range: 2025-01-01 through 2025-12-31
+date_count: 365
+date_continuous: True
+slots_per_day: 144
+load_missing_count: 0
+pv_actual_missing_count: 0
+load_negative_count: 0
+pv_actual_negative_count: 0
+load_power_range_kw: [1995.7176, 7978.8849]
+pv_actual_power_range_kw: [0, 10216.2]
+
+[Attachment 3]
+sha256: 8A61B06C52BD0D639A1CC37C61A7D9F5B75EDCBCA718F64C1BD3498EC9F9D843
+sheet_names: [Sheet1]
+dimensions: 1461 rows x 26 columns
+date_range: 2025-01-01 through 2025-12-31
+date_count: 365
+date_continuous: True
+records_per_date: 4
+release_times: [00:00, 06:00, 12:00, 18:00]
+records_per_release_time: 365
+horizon_columns: 24 (forecast hour 1 through forecast hour 24)
+forecast_numeric_cells: 35040
+missing_count: 0
+nonnumeric_count: 0
+negative_count: 0
+zero_count: 17525
+power_min_kw: 0
+power_max_kw: 9995.8875
+duplicate_date_release_keys: 0
+date_fill_rule: forward-fill column A within each four-row daily block
+target_rule: issue_datetime + horizon_hour
+hourly_to_10min_rule: not specified by the official material; modeling assumption required
+
+[Raw result3.xlsx]
+sha256: C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC
+sheet_names_exact: [计划购电量, 调整购电量, 充放电量, 紧急购电量]
+merged_cells: none
+
+sheet=计划购电量
+date_range: A2:A335 = 2025-02-01 through 2025-12-31
+date_count: 334
+time_headers: B1:EO1
+time_header_count: 144
+time_header_unique_count: 144
+data_region: B2:EO335
+expected_data_cell_count: 48096
+current_nonempty_data_cells: 0
+first_header: 0:10-0:20
+last_header: 0:00-0:10+1
+
+sheet=调整购电量
+date_range: A2:A335 = 2025-02-01 through 2025-12-31
+date_count: 334
+time_headers: B1:EO1
+time_header_count: 144
+headers_exactly_match_plan_sheet: True
+data_region: B2:EO335
+expected_data_cell_count: 48096
+current_nonempty_data_cells: 0
+semantic_ambiguity: template does not say delta versus final adjusted amount and does not provide separate 06:00/12:00/18:00 matrices
+
+official_lock_boundaries_by_template_index:
+  06:00 -> t=35, header=6:00-6:10; t=34 header=5:50-6:00
+  12:00 -> t=71, header=12:00-12:10; t=70 header=11:50-12:00
+  18:00 -> t=107, header=18:00-18:10; t=106 header=17:50-18:00
+
+sheet=充放电量
+raw_dimensions: 26 rows x 6 columns
+columns: A date; B time block; C charge; D discharge; E SOC time; F SOC
+six_blocks: [0:00-4:00, 4:00-8:00, 8:00-12:00, 12:00-16:00, 16:00-20:00, 20:00-24:00]
+raw_template_rows_are_schematic: True
+evidence_rows: 2025-02-01 block, 2025-02-02 block, 2025-03-20 block, ellipsis row, 2025-12-31 block
+future_export_rule: expand copied template to six rows per formal date; aggregate actual realtime charge/discharge by exact 24-slot index blocks
+SOC_rule: write actual 00:00 and 24:00 SOC, unit kWh
+
+sheet=紧急购电量
+raw_dimensions: 11 rows x 3 columns
+columns: A date; B purchase time interval; C emergency purchase
+raw_template_rows_are_schematic: True
+future_export_rule: write only positive actual emergency events; merge adjacent official slots; do not create zero records
+
+[Unresolved official ambiguities]
+1. Whether every adjustment is settled versus the 00:00 plan or versus the previous adjustment.
+2. Exact non-duplicative interpretation of the 50% downward breach charge.
+3. Whether 调整购电量 stores a delta, each release plan, or the final effective amount.
+4. How hourly PV forecasts map to 10-minute slots, including the first hour after release.
+5. Which purchase quantity should appear in the paper's Table 1 for Question 3.
+6. No official load forecast is provided; a causal history-only model is required.
+7. No daily terminal SOC target is specified.
+
+raw_template_overwritten: False
+result3_output_created: False

@@ -1,0 +1,133 @@
+{
+  "integrity": [
+    {
+      "policy": "问题4-2",
+      "completed_checkpoint": true,
+      "completed_days_checkpoint": 334,
+      "slot_rows": 48096,
+      "date_count": 334,
+      "first_date": "2025-02-01",
+      "last_date": "2025-12-31",
+      "missing_dates": 0,
+      "duplicate_date_slots": 0,
+      "missing_date_slots": 0,
+      "unexpected_date_slots": 0,
+      "duplicate_billing_rows": 0,
+      "valid_complete_trajectory": true
+    },
+    {
+      "policy": "问题4-3",
+      "completed_checkpoint": true,
+      "completed_days_checkpoint": 334,
+      "slot_rows": 48096,
+      "date_count": 334,
+      "first_date": "2025-02-01",
+      "last_date": "2025-12-31",
+      "missing_dates": 0,
+      "duplicate_date_slots": 0,
+      "missing_date_slots": 0,
+      "unexpected_date_slots": 0,
+      "duplicate_billing_rows": 0,
+      "valid_complete_trajectory": true
+    }
+  ],
+  "physical_and_information": [
+    {
+      "policy": "问题4-2",
+      "max_supply_demand_balance_residual_kwh": 4.547473508864641e-13,
+      "max_reported_balance_residual_kwh": 4.547473508864641e-13,
+      "max_soc_recurrence_residual_kwh": 0.0,
+      "max_cross_day_soc_error_kwh": 0.0,
+      "soc_below_min_count": 0,
+      "soc_above_max_count": 0,
+      "charge_power_limit_violations": 0,
+      "discharge_power_limit_violations": 0,
+      "simultaneous_charge_discharge_count": 0,
+      "emergency_purchase_while_charging_count": 0,
+      "negative_original_plan_below_tolerance": 0,
+      "negative_effective_plan_below_tolerance": 0,
+      "delta_plus_definition_max_error_kwh": 0.0,
+      "delta_minus_definition_max_error_kwh": 0.0,
+      "max_slot_contract_recompute_error_yuan": 0.0,
+      "max_slot_emergency_recompute_error_yuan": 0.0,
+      "max_slot_total_bill_recompute_error_yuan": 0.0,
+      "future_price_leak_count": 0,
+      "future_load_or_pv_leak_count": 0,
+      "all_logged_information_leak_count": 0,
+      "executed_prefix_lock_violation_count": 0,
+      "active_version_vs_effective_plan_max_error_kwh": null,
+      "middle_version_repeat_settlement_count": 0
+    },
+    {
+      "policy": "问题4-3",
+      "max_supply_demand_balance_residual_kwh": 4.547473508864641e-13,
+      "max_reported_balance_residual_kwh": 2.2737367544323206e-13,
+      "max_soc_recurrence_residual_kwh": 0.0,
+      "max_cross_day_soc_error_kwh": 0.0,
+      "soc_below_min_count": 0,
+      "soc_above_max_count": 0,
+      "charge_power_limit_violations": 0,
+      "discharge_power_limit_violations": 0,
+      "simultaneous_charge_discharge_count": 0,
+      "emergency_purchase_while_charging_count": 0,
+      "negative_original_plan_below_tolerance": 0,
+      "negative_effective_plan_below_tolerance": 0,
+      "delta_plus_definition_max_error_kwh": 8.761682129150269e-12,
+      "delta_minus_definition_max_error_kwh": 0.0,
+      "max_slot_contract_recompute_error_yuan": 7.592873733121623e-12,
+      "max_slot_emergency_recompute_error_yuan": 0.0,
+      "max_slot_total_bill_recompute_error_yuan": 7.592873733121623e-12,
+      "future_price_leak_count": 0,
+      "future_load_or_pv_leak_count": 0,
+      "all_logged_information_leak_count": 0,
+      "executed_prefix_lock_violation_count": 0,
+      "active_version_vs_effective_plan_max_error_kwh": 2.021099337273174e-12,
+      "middle_version_repeat_settlement_count": 0
+    }
+  ],
+  "solver_summary": [
+    {
+      "policy": "问题4-2",
+      "gap_max": 9.852316853706037e-05,
+      "gap_mean": 1.1854388990506519e-05,
+      "gap_p95": 7.520059999771161e-05,
+      "time_max_s": 12.617148199933581,
+      "time_mean_s": 2.136309283227495,
+      "optimal_or_requested_gap": 334,
+      "limit_feasible": 0,
+      "failed": 0
+    },
+    {
+      "policy": "问题4-3",
+      "gap_max": 0.0007825911757777033,
+      "gap_mean": 1.92374065871792e-05,
+      "gap_p95": 9.408028818932914e-05,
+      "time_max_s": 46.74446020007599,
+      "time_mean_s": 6.57623272679689,
+      "optimal_or_requested_gap": 1323,
+      "limit_feasible": 13,
+      "failed": 0
+    }
+  ],
+  "q4_3_terminal_soc_review": {
+    "dec30_end_to_dec31_start_error_kwh": 0.0,
+    "dec31_start_soc_kwh": 10672.10857270371,
+    "dec31_end_soc_kwh": 10225.682061740747,
+    "dec31_soc_change_kwh": -446.4265109629632,
+    "last_24_charge_kwh": 9741.202261604938,
+    "last_24_discharge_kwh": 3046.1962562666668,
+    "last_24_original_plan_kwh": 22249.745292004936,
+    "last_24_effective_purchase_kwh": 22234.51010533827,
+    "last_24_actual_price_min_yuan_per_kwh": 0.3518,
+    "last_24_actual_price_max_yuan_per_kwh": 1.5632,
+    "last_slot_soc_recurrence_residual_kwh": 0.0,
+    "terminal_soc_q4_2_minus_q4_3_kwh": 53.70607766564717,
+    "terminal_value_in_actual_bill": false
+  },
+  "protected_hash_changes": {},
+  "numeric_normalization": {
+    "问题4-2": "轨迹未单独记录规范化标记；所有导出计划量均未低于 -1e-6 kWh，无法从结果表反推历史规范化次数。",
+    "问题4-3_count": 7,
+    "问题4-3_max_observable_negative_magnitude_kwh": 8.761682129150269e-12
+  }
+}

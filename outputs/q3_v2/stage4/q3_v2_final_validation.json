@@ -1,0 +1,87 @@
+{
+  "official_structure": {
+    "A_all_updates_dynamic_value": {
+      "days": 334,
+      "slots": 48096,
+      "date_sequence_exact": true,
+      "each_day_slots_0_to_143": true,
+      "time_labels_match_official_row_order": true
+    },
+    "B_no_adjustment_dynamic_value": {
+      "days": 334,
+      "slots": 48096,
+      "date_sequence_exact": true,
+      "each_day_slots_0_to_143": true,
+      "time_labels_match_official_row_order": true
+    }
+  },
+  "independent_numeric_audit": [
+    {
+      "policy": "A_all_updates_dynamic_value",
+      "slots": 48096,
+      "days": 334,
+      "contract_recompute_max_abs_error_yuan": 1e-10,
+      "emergency_recompute_max_abs_error_yuan": 3e-10,
+      "total_recompute_max_abs_error_yuan": 4e-10,
+      "soc_transition_max_abs_error_kwh": 1e-10,
+      "cross_day_soc_max_abs_error_kwh": 0.0,
+      "balance_max_abs_error_kwh": 0.0,
+      "soc_violation_count": 0,
+      "power_violation_count": 0,
+      "simultaneous_charge_discharge_count": 0,
+      "emergency_and_charge_count": 0,
+      "information_violation_count": 0,
+      "version_lock_max_abs_error_kwh": 0.0
+    },
+    {
+      "policy": "B_no_adjustment_dynamic_value",
+      "slots": 48096,
+      "days": 334,
+      "contract_recompute_max_abs_error_yuan": 1e-10,
+      "emergency_recompute_max_abs_error_yuan": 3e-10,
+      "total_recompute_max_abs_error_yuan": 3e-10,
+      "soc_transition_max_abs_error_kwh": 1e-10,
+      "cross_day_soc_max_abs_error_kwh": 0.0,
+      "balance_max_abs_error_kwh": 0.0,
+      "soc_violation_count": 0,
+      "power_violation_count": 0,
+      "simultaneous_charge_discharge_count": 0,
+      "emergency_and_charge_count": 0,
+      "information_violation_count": 0,
+      "version_lock_max_abs_error_kwh": 0.0
+    }
+  ],
+  "same_forecast_and_scenario_access_A_B": true,
+  "information_rows_each_policy": {
+    "A_all_updates_dynamic_value": 1336,
+    "B_no_adjustment_dynamic_value": 1336
+  },
+  "protected_manifests_equal": true,
+  "protected_file_count": 72,
+  "raw_result3_sha256": "C59DA470CABD0BE23F602C95C8AA9D11EC224A0CDAC216B3E1F218E65D006BDC",
+  "raw_result3_unchanged_from_stage3_freeze": true,
+  "outputs_tables_result3_exists": false,
+  "recovery": {
+    "prior_process_exit_record": "process exited after 2025-12-25 checkpoint and no A failure log was written; cause not inferred as model failure",
+    "completed_before_resume_days": 328,
+    "completed_before_resume_through": "2025-12-25",
+    "resume_first_date": "2025-12-26",
+    "pre_resume_checkpoint_sha256": "1CE94029B5EF64399C2A9FFBBF0F1473202F9CEA213849CF0F69BAE79928A1B9",
+    "pre_resume_total_cost_yuan": 12972853.129148582,
+    "post_aggregation_prefix_total_cost_yuan": 12972853.129148588,
+    "pre_resume_emergency_kwh": 29276.106003702902,
+    "post_aggregation_prefix_emergency_kwh": 29276.1060037024,
+    "dec25_end_soc_kwh": 1399.3154558798,
+    "dec26_start_soc_kwh": 1399.3154558798,
+    "prefix_cost_continuity_error_yuan": 5.587935447692871e-09,
+    "prefix_emergency_continuity_error_kwh": -5.020410753786564e-10,
+    "soc_resume_error_kwh": 0.0,
+    "preexisting_328_days_recomputed": false,
+    "A_numeric_normalization_count": 0,
+    "B_numeric_normalization_count": 9,
+    "normalization_epsilon_kwh": 1e-06,
+    "A_max_normalization_abs_kwh": 0.0,
+    "B_max_normalization_abs_kwh": 8e-09,
+    "B_max_normalization_cost_impact_yuan": 6.8e-09
+  }
+}

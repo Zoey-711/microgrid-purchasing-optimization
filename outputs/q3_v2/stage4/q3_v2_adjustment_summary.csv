@@ -1,0 +1,3 @@
+﻿policy,scheduled_intraday_update_events,events_with_nonzero_adjustment,events_with_zero_adjustment,final_upward_adjusted_slots,final_downward_adjusted_slots,final_unchanged_slots,upward_adjustment_kwh,downward_adjustment_kwh,unchanged_effective_purchase_kwh
+A_all_updates_dynamic_value,1002,963,39,4559,6323,37214,367297.9922609099,916847.5108900280,14932930.6668196768
+B_no_adjustment_dynamic_value,1002,0,1002,0,0,48096,0.0000000000,0.0000000000,21088846.4104721583

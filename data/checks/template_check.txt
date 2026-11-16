@@ -1,0 +1,55 @@
+Question 1 attachment/template inspection
+==========================================
+Scope: inspection only; no raw input file has been modified.
+
+[Attachment 1]
+path: E:\数学建模\C题\data\raw\附件1.xlsx
+sheets: ['Sheet1']
+active sheet: Sheet1
+dimensions: 145 rows x 4 columns
+headers: ['时间', '电价', '小区负载', '光伏发电预测功率']
+unit note: Excel headers have no units; the problem statement specifies price in yuan/kWh and load/PV in kW.
+first 5 data rows:
+row 2: 00:10:00 | 0.4248 | 3439.8466 | 0
+row 3: 00:20:00 | 0.4245 | 3437.9792 | 0
+row 4: 00:30:00 | 0.4269 | 3444.3031 | 0
+row 5: 00:40:00 | 0.4272 | 3454.4437 | 0
+row 6: 00:50:00 | 0.4271 | 3458.8273 | 0
+last 5 data rows:
+row 141: '23:20' | 0.424 | 3416.1518 | 0
+row 142: '23:30' | 0.422 | 3421.9811 | 0
+row 143: '23:40' | 0.424 | 3429.6923 | 0
+row 144: '23:50' | 0.4271 | 3439.061 | 0
+row 145: '0:00+1' | 0.4276 | 3444.7259 | 0
+
+[result1 template]
+path: E:\数学建模\C题\data\raw\result1.xlsx
+sheets: ['计划购电量', '充放电量']
+plan-sheet dimensions: 145 rows x 2 columns
+plan-sheet headers: ['时间段', '购电量']
+storage-sheet dimensions: 7 rows x 5 columns
+storage-sheet headers: ['时间段', '充电量', '放电量', '时刻', '储电量']
+planned-purchase write range: B2:B145 (144 cells)
+charge/discharge write ranges: B2:B7 and C2:C7 (six four-hour aggregates)
+SOC write cells: E2 for 0:00 and E3 for 24:00, according to D2/D3 labels
+
+[Time-label audit]
+Attachment-1 data-row count is 144: True
+Template planned-purchase-row count is 144: True
+Attachment-1 labels form 00:10, 00:20, ..., 24:00: True
+Template left endpoints form 00:10, 00:20, ..., 24:00: True
+Order mapping input label -> template left endpoint is exact: True
+first mapping: 00:10:00 -> 0:10-0:20
+last mapping: '0:00+1' -> 0:00+1-0:10+1
+Implementation rule: use row order as the 144-period internal index; preserve template labels unchanged for export.
+Caveat: files establish exact row mapping but cannot independently prove timestamps are physical starts rather than ends.
+
+[Fixed Question-1 storage convention]
+decision variables: purchase[t], charge[t], discharge[t], curtailment[t], t = 0,...,143
+state variable: soc[t], t = 0,...,144; soc[0] is 0:00 and soc[144] is next-day 0:00
+soc[0] = 6000.0; soc[144] = 6000.0
+1200.0 <= soc[t] <= 10800.0
+charge efficiency = 0.9; discharge efficiency = 0.9
+state equation: soc[t+1] = soc[t] + eta_c * charge[t] - discharge[t] / eta_d
+
+Inspection verdict: PASS

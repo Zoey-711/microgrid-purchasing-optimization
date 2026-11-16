@@ -1,0 +1,23 @@
+{
+  "frozen_config_path": "outputs\\q4_v1\\stage3\\q4_v1_frozen_config_4_3.json",
+  "frozen_config_sha256": "BCA09E1A26400C9520F26EDED796D1D32A73E7F499243A760E7F7F6292481DB7",
+  "frozen_config": {
+    "price_predictor": "P3",
+    "supply_predictor": "weekday",
+    "M": 14,
+    "v": 0.6,
+    "grid": 100,
+    "formal_evaluation_not_run": true,
+    "information_boundary": "historical prices only for future price forecasts",
+    "grid_selected_kwh": 100,
+    "development_period": "2025-01-22..31"
+  },
+  "reused_code": [
+    "src/q4_v1/run_stage4.py: cache43, scen43, normalize, settlement",
+    "src/q3_v2/rolling_milp.py: solve_version_milp and frozen solver settings",
+    "src/q2_v2/execution.py: build_path_value_functions, select_dp_action"
+  ],
+  "experimental_difference": "allow_intraday_plan_adjustment=False versus True",
+  "price_scenario_in_frozen_model": "not used; the frozen model uses causal price point forecasts",
+  "cold_start": "Jan-01 uses the existing Q4-3 no-completed-history greedy fallback; both policies start at SOC=6000 kWh"
+}

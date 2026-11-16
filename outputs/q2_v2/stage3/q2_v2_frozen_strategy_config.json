@@ -1,0 +1,22 @@
+{
+  "status": "frozen_after_january_development_only",
+  "formal_evaluation_has_run": false,
+  "load_forecast": "mean of same weekday/same slot in prior 35 days; fallback prior up-to-7 days",
+  "pv_forecast": "same-slot mean of prior up-to-7 complete days",
+  "joint_residual_scenario_cap": 14,
+  "terminal_value_yuan_per_kwh": 0.4,
+  "dp_soc_grid_kwh": 50.0,
+  "actual_soc_is_continuous": true,
+  "dp_primary_tie_tolerance_yuan": 1e-08,
+  "tie_rule": "within primary tolerance minimize charge+discharge throughput; deterministic residual ordering",
+  "solver": "HiGHS MILP",
+  "solver_time_limit_seconds": 45.0,
+  "solver_relative_gap": 0.0001,
+  "solver_random_seed": 0,
+  "solver_threads": 1,
+  "cold_start": "Jan-01 zero plan and greedy actual execution",
+  "initial_soc_2025_01_01_kwh": 6000.0,
+  "cross_day_soc": true,
+  "terminal_value_in_actual_bill": false,
+  "result2_generation_authorized": false
+}

@@ -1,0 +1,11 @@
+{
+  "price_predictor": "P3",
+  "supply_predictor": "weekday",
+  "M": 7,
+  "v": 0.6,
+  "grid": 100,
+  "formal_evaluation_not_run": true,
+  "information_boundary": "historical prices only for future price forecasts",
+  "grid_selected_kwh": 100,
+  "development_period": "2025-01-22..31"
+}

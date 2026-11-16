@@ -1,0 +1,21 @@
+# Contest-provided source attachments are not included in this public repository.
+data/raw/
+
+# Generated local files
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.log
+*.aux
+*.out
+*.toc
+*.synctex.gz
+
+# Credentials and machine-specific settings
+.env
+.env.*
+!.env.example
+*.key
+*.pem

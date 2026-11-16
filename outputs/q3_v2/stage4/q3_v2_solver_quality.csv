@@ -1,0 +1,5 @@
+﻿policy,solution_class,termination_condition,calls,mean_gap,max_gap,mean_solve_seconds,total_solve_seconds
+A_all_updates_dynamic_value,certified_to_requested_gap,optimal,1250,0.0000228340,0.0000999999,4.6813127902,5851.6409877031
+A_all_updates_dynamic_value,time_limit_feasible_incumbent,maxTimeLimit,86,0.0002510885,0.0009249139,45.6119369640,3922.6265788997
+B_no_adjustment_dynamic_value,certified_to_requested_gap,optimal,248,0.0000522524,0.0000999999,13.4202299536,3328.2170285003
+B_no_adjustment_dynamic_value,time_limit_feasible_incumbent,maxTimeLimit,86,0.0002437684,0.0008120795,45.6058384872,3922.1021099012

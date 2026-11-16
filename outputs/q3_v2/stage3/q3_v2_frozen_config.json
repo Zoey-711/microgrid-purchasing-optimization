@@ -1,0 +1,26 @@
+{
+  "selected_candidate_id": "weekday35_bias12_M14_v0p4_h100_all_updates",
+  "load_method": "weekday35_bias12",
+  "scenario_cap": 14,
+  "terminal_value": 0.4,
+  "soc_grid_kwh": 100.0,
+  "realtime_executor": "historical_path_value_dynamic_executor",
+  "action_tie_break": "within primary-objective tolerance, minimize storage throughput; then deterministic tuple order",
+  "adjustment_policy": "all_updates",
+  "issue_hours": [0, 6, 12, 18],
+  "first_modifiable_slots": [0, 35, 71, 107],
+  "milp_time_limit_seconds": 45.0,
+  "milp_requested_relative_gap": 0.0001,
+  "milp_threads": 1,
+  "milp_random_seed": 0,
+  "development_period": [
+    "2025-01-22",
+    "2025-01-31"
+  ],
+  "cold_start": "2025-01-01 00:00 SOC=6000 kWh; zero plan; greedy physical execution",
+  "warmup": "2025-01-02 through 2025-01-21; candidate-specific closed-loop SOC",
+  "selection_primary_metric": "actual contract settlement plus emergency purchase cost",
+  "executor_evidence_in_development": "paired greedy ablation had identical cost and emergency energy; dynamic executor retained as a precommitted Stage-4 candidate without claiming January economic superiority",
+  "parameters_selected_using_Feb_Dec": false,
+  "result3_generated": false
+}

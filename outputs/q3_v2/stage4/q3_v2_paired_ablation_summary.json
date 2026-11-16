@@ -1,0 +1,11 @@
+{
+  "scope": "conditional daily paired executor ablation; plan-version trajectory and daily initial SOC fixed to A",
+  "dynamic_cost_yuan": 13268776.239167469,
+  "greedy_cost_yuan": 13281638.698275145,
+  "dynamic_minus_greedy_cost_yuan": -12862.459107676521,
+  "dynamic_emergency_kwh": 29540.082258968003,
+  "greedy_emergency_kwh": 23997.68181560925,
+  "dynamic_minus_greedy_emergency_kwh": 5542.400443358754,
+  "dynamic_terminal_soc_kwh": 1462.5760325657,
+  "greedy_terminal_soc_kwh": 1462.5760325659073
+}

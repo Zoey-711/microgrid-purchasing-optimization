@@ -1,0 +1,85 @@
+% !TeX program = xelatex
+% 2026 CUMCM 电子版论文示例：电子版第一页必须是摘要专用页。
+% 编译：latexmk -xelatex cumcm.tex
+\documentclass[zihao=-4,a4paper,UTF8,fontset=none]{ctexart}
+
+% template
+\usepackage{cumcm2026}
+
+% set English and Number font
+\setmainfont{TimesNewRoman.ttf}[
+  Path=fonts/,
+  BoldFont=TimesNewRomanBold.ttf,
+  ItalicFont=TimesNewRomanItalic.ttf,
+  BoldItalicFont=TimesNewRomanBoldItalic.ttf
+]
+
+
+
+% set Chinese font
+\setCJKmainfont[
+  Path=fonts/,
+  BoldFont=SimHei.ttf
+]{SimSun.ttc}
+
+\setCJKfamilyfont{zhsong}[
+  Path=fonts/
+]{SimSun.ttc}
+
+\setCJKfamilyfont{zhhei}[
+  Path=fonts/,
+  BoldFont=SimHei.ttf
+]{SimHei.ttf}
+\setCJKmonofont[
+  Path=fonts/
+]{SimSun.ttc}
+
+\providecommand{\songti}{}
+\providecommand{\heiti}{}
+\renewcommand{\songti}{\CJKfamily{zhsong}}
+\renewcommand{\heiti}{\CJKfamily{zhhei}}
+
+
+
+
+
+
+% 本地论文排版：沿用 cumcm2026.sty，正文与摘要由同目录文件载入。
+% 修改论文结构与文字请编辑 docs/论文正文.md，再运行 ../paper_structure_review/build_paper.py。
+\usepackage{etoolbox}
+\titleformat{\section}{\centering\heiti\zihao{4}}{\chinese{section}、}{0.3em}{}
+\titleformat{\subsection}{\heiti\zihao{-4}}{\thesubsection}{0.7em}{}
+\titleformat{\subsubsection}{\heiti\zihao{-4}}{\thesubsubsection}{0.7em}{}
+\linespread{1.15}
+\setlength{\emergencystretch}{2em}
+\setlength{\parskip}{0pt}
+\widowpenalty=10000
+\clubpenalty=10000
+\setcounter{secnumdepth}{3}
+% 供无编号 longtable 使用；Pandoc 将其类型标记为 none。
+\newcounter{none}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\AtBeginEnvironment{longtable}{\small}
+\renewcommand{\arraystretch}{1.22}
+\setlength{\tabcolsep}{5pt}
+\captionsetup{font=small,labelfont=normalfont,labelsep=quad}
+\makeatletter
+\renewcommand{\maketitle}{%
+  \thispagestyle{plain}\setcounter{page}{1}%
+  \begin{center}
+    {\heiti\zihao{3}\@title\par}
+    \vspace{1em}
+    {\heiti\zihao{4}摘\quad 要\par}
+  \end{center}}
+\makeatother
+\title{基于联合残差情景与动态价值调度的微网购电优化}
+\begin{document}
+\maketitle
+\begin{cumcmabstract}
+\linespread{1.02}\selectfont
+% 强制摘要首段按中文排版首行缩进两字；后续自然段由空行自动缩进。
+\par\indent\input{paper_abstract.tex}
+\cumcmkeywords{光伏储能调度；混合整数线性规划；情景随机规划；联合残差场景；滚动时域优化；动态规划；近似价值函数}
+\end{cumcmabstract}
+\input{paper_body.tex}
+\end{document}

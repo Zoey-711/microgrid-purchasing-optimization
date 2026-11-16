@@ -1,0 +1,3 @@
+﻿policy,actual_bill_yuan,terminal_soc_kwh,frozen_reference_soc_kwh,frozen_uniform_inventory_value_yuan_per_kwh,inventory_correction_yuan,inventory_corrected_cost_yuan,vs_4_2_actual_cost_yuan,vs_4_2_inventory_corrected_cost_yuan
+问题4-2,14540193.849836985,10279.388139406394,6000.0,1.0,-4279.388139406394,14535914.461697578,0.0,0.0
+问题4-3,14152191.304000687,10225.682061740747,6000.0,1.0,-4225.682061740747,14147965.621938946,-388002.5458362978,-387948.8397586327
