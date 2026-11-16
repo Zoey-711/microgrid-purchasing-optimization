@@ -24,6 +24,8 @@
 
 具体公式、信息边界与结算口径见论文和各问题的 `model_design.md` 等文档。问题四的同信息条件独立闭环消融资料位于 `outputs/q4_v1/ablation/same_info/`。
 
+想快速了解方法选择及四问之间的关系，可先看[建模思路](docs/建模思路.md)；准备复现时看[复现说明](docs/复现说明.md)。
+
 ## 运行说明
 
 推荐 Python 3.11。在仓库根目录安装依赖：
@@ -46,3 +48,13 @@ python -m pip install -r requirements.txt
 | 问题 4-3 综合方案 | 14,152,191.304 元 | 较问题 4-2 降低 2.668% |
 
 问题 4-2 与 4-3 的配置和信息条件并非完全相同；日内调整权限的独立贡献见同信息条件消融材料。所有结果的定义和适用范围以论文及审计文档为准。
+
+## 建议阅读顺序
+
+1. [论文 PDF](paper.pdf)：完整的问题分析、数学模型、结果及局限。
+2. [建模思路](docs/建模思路.md)：为什么依次引入联合情景、动态价值和滚动调整。
+3. `docs/q2_v2/q2_v2_model_design.md`、`docs/q3_v2/q3_v2_model_design.md`、`docs/q4_v1/q4_v1_model_design.md`：各问题的变量、约束与结算定义。
+4. `docs/q2_v2/q2_v2_parameter_selection.md`、`docs/q3_v2/q3_v2_parameter_selection.md`、`docs/q4_v1/q4_v1_parameter_selection.md`：参数选择依据；冻结记录位于相同文档目录。
+5. `outputs/`：正式工作簿、全年比较、同信息条件消融和求解质量数据。
+
+仓库没有单独发布许可证；引用论文和使用代码时请注明来源。
